@@ -15,7 +15,25 @@ time.sleep(3)
 
 
 # WHEN The user clicks on Themes (Sections)
-themes_xpath = "//a[text()='Teemat']"
+
+
+hamburger = driver.find_element_by_id("offcanvas-toggler")
+
+hamburger.click()
+time.sleep(1)
+full_screen_themes_xpath = "//a[text()='Teemat']"
+small_screen_themes_xpath = "//li/a[@href='/teemat']"
+cheat_themes_xpath = "/html/body/div[7]/div/div[1]/div/ul/li[4]/a"
+
+time.sleep(1)
+
+# themes = driver.find_element_by_xpath(cheat_themes_xpath)
+themes = driver.find_element_by_link_text('Teemat')
+themes.click()
+time.sleep(2)
+# Idea . test using different breakpoints
+# Idea 2: Use headless browser
+
 # AND the user clicks on the food section
 food_section_xpath = "//li/a[text()='Ruoka']"
 
